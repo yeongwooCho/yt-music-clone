@@ -10,6 +10,7 @@ import {Drawer, DrawerContent, DrawerTrigger,} from "@/components/ui/drawer"
 import Logo from "@/components/elements/Logo";
 import Navigator from "@/components/elements/Navigator";
 import {cn} from "@/lib/utils";
+import {useUIState} from "@/app/hooks/useUIState";
 
 const HeaderDrawer = ({children}: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ const HeaderDrawer = ({children}: { children: React.ReactNode }) => {
 const Header = ({children}: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const headRef = useRef<HTMLElement | null>(null);
+  const {headerImageSrc, setHeaderImageSrc} = useUIState();
 
   useEffect(() => {
     const current = headRef.current;
@@ -55,7 +57,8 @@ const Header = ({children}: { children: React.ReactNode }) => {
     <header ref={headRef} className="relative overflow-y-auto w-full h-full">
       <section className="absolute top-0 w-full">
         <div className="relative h-[400px] w-full">
-          <Image fill src="https://images.unsplash.com/photo-1487956382158-bb926046304a" alt="bg-image"
+          <Image fill src={headerImageSrc || "https://images.unsplash.com/photo-1487956382158-bb926046304a"}
+                 alt="bg-image"
                  className="object-cover"/>
           {/*<div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black"/>*/}
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black"/>
