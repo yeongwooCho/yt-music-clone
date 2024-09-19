@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import UserIcon from "@/components/UserIcon";
+import PagePadding from "@/components/PagePadding";
 
 const Header = ({children}: { children: React.ReactNode }) => {
   return (
@@ -14,8 +15,10 @@ const Header = ({children}: { children: React.ReactNode }) => {
         </div>
       </section>
       <section className="sticky">
-        search section
-        <UserIcon/>
+        <PagePadding>
+          search section
+          <UserIcon/>
+        </PagePadding>
       </section>
       <section className="relative">
         {children}
