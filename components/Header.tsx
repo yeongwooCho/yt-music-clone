@@ -13,10 +13,11 @@ const Header = ({children}: { children: React.ReactNode }) => {
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black"/>
         </div>
       </section>
-      <section>
+      <section className="sticky">
+        search section
         <UserIcon/>
       </section>
-      <section className="absolute">
+      <section className="relative">
         {children}
       </section>
     </header>
