@@ -3,8 +3,15 @@
 import React from 'react';
 import {IoMdPlayCircle} from "react-icons/io";
 
-const PlayListNav = ({playlist}) => {
-  const {id, owner, playlistName, songList} = playlist;
+interface IPlayList {
+  id: string;
+  owner: string;
+  playlistName: string;
+  songList: string[];
+}
+
+const PlayListNav = ({playlist}: { playlist: IPlayList }) => {
+  const {owner, playlistName} = playlist;
 
   const onClickPlay = () => {
     console.log("play");

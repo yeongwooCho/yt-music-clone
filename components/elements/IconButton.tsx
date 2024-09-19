@@ -1,7 +1,13 @@
 import React from 'react';
 
-const IconButton = ({icon, onClickIcon = () => {} }) => {
+interface IconButtonProps {
+  icon: React.ReactNode;
+  onClickIcon?: () => void;
+}
 
+const IconButton: React.FC<IconButtonProps> = (
+  {icon, onClickIcon}
+) => {
   return (
     <div>
       <div onClick={onClickIcon}

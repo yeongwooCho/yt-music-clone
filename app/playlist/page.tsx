@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = (props) => {
+const page = (props: { searchParams: { list: string } }) => {
   console.log(props);
   return (
     <div>
