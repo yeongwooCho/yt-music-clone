@@ -2,13 +2,8 @@
 
 import React from 'react';
 import {IoMdPlayCircle} from "react-icons/io";
+import {IPlayList} from "../../types";
 
-interface IPlayList {
-  id: string;
-  owner: string;
-  playlistName: string;
-  songList: string[];
-}
 
 const PlayListNav = ({playlist}: { playlist: IPlayList }) => {
   const {owner, playlistName} = playlist;
