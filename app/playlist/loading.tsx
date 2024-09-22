@@ -1,12 +1,14 @@
-'use client';
-
 import React from 'react';
-import LoadingBar from "@/components/LoadingBar";
+import Header from "@/components/Header";
 
-const loading = () => {
+const layout = ({children}: { children: React.ReactNode }) => {
   return (
-    <LoadingBar/>
+    <div className="w-full h-full">
+      <Header>
+        {children}
+      </Header>
+    </div>
   );
 };
 
-export default loading;
+export default layout;
