@@ -8,16 +8,17 @@ import {useRouter} from "next/navigation";
 import {MdMoreVert} from "react-icons/md";
 import {FiPlay} from "react-icons/fi";
 import IconButton from "@/components/elements/IconButton";
-import {red} from "next/dist/lib/picocolors";
 
-const PlayListCard = ({playlist}: { playlist: IPlayList }) => {
+const PlayListCard = ({playlist}: { playlist: IPlayList | undefined }) => {
   const {push} = useRouter();
 
-  const {id, owner, playlistName, songList} = playlist;
+  const {id, owner = "", playlistName = "", songList = []} = playlist ?? {};
   const randomSong = getRandomElementFromArray(songList) as ISong;
 
   const onClickCard = () => {
-    push(`/playlist?list=${id}`);
+    if (id) {
+      push(`/playlist?list=${id}`);
+    }
   }
 
   const onClickPlay = () => {
@@ -28,8 +29,10 @@ const PlayListCard = ({playlist}: { playlist: IPlayList }) => {
   return (
     <article className="group h-[240px] cursor-pointer" onClick={onClickCard}>
       <section className="relative h-[136px]">
-        <Image src={randomSong.imageSrc} alt='thumbnail' fill={true} className="object-cover"/>
-        <div className="hidden relative group-hover:block bg-gradient-to-b from-[rgba(0,0,0,0.7)] top-0 w-full h-[136px]">
+        <Image src={randomSong.imageSrc || "https://images.unsplash.com/photo-1487956382158-bb926046304a"}
+               alt='thumbnail' fill={true} className="object-cover"/>
+        <div
+          className="hidden relative group-hover:block bg-gradient-to-b from-[rgba(0,0,0,0.7)] top-0 w-full h-[136px]">
           <div className="absolute top-2 right-3">
             <IconButton icon={
               <MdMoreVert size={20}/>
