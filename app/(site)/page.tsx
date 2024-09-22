@@ -25,6 +25,38 @@ const home = async function Home() {
                 <UserIcon size="lg"/>
               </div>
             )}/>
+          <div className="mt-20"></div>
+          <PlayListCarousel
+            title="아이유"
+            subTitle="새로운 앨범"
+            playListArray={dummyPlaylistArray1}
+            Thumbnail={(
+              <div className="w-[56px] h-[56px]">
+                <UserIcon size="lg"/>
+              </div>
+            )}/>
+          <div className="mt-20"></div>
+
+          <PlayListCarousel
+            title="커뮤니티 제공"
+            subTitle=""
+            playListArray={dummyPlaylistArray1}
+            Thumbnail={(
+              <div className="w-[56px] h-[56px]">
+                <UserIcon size="lg"/>
+              </div>
+            )}/>
+          <div className="mt-20"></div>
+
+          <PlayListCarousel
+            title="커버 및 리믹스"
+            subTitle=""
+            playListArray={dummyPlaylistArray1}
+            Thumbnail={(
+              <div className="w-[56px] h-[56px]">
+                <UserIcon size="lg"/>
+              </div>
+            )}/>
         </div>
       </div>
     </PagePadding>
