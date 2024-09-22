@@ -28,7 +28,7 @@ const page = async () => {
         )}/>
 
         <SongListCarousel
-          title="커버 및 리믹스" subTitle="" songListTop10={songListTop10} Thumbnail={(
+          title="인기곡" subTitle="" songListTop10={songListTop10} Thumbnail={(
           <div className="w-[56px] h-[56px]">
             <UserIcon size="lg"/>
           </div>
