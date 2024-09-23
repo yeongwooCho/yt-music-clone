@@ -36,7 +36,7 @@ const HeaderDrawer = ({children}: { children: React.ReactNode }) => {
 const Header = ({children}: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const headRef = useRef<HTMLElement | null>(null);
-  const {headerImageSrc, setHeaderImageSrc} = useUIState();
+  const {headerImageSrc} = useUIState();
 
   useEffect(() => {
     const current = headRef.current;

@@ -23,7 +23,7 @@ const Navigator = () => {
   return (
     <div>
       <section className="flex flex-col gap-2 p-4">
-        {routes.map((route, index) => {
+        {routes.map((route) => {
           return (
             <Link key={route.label} href={route.href}>
               <div
@@ -52,8 +52,8 @@ const Navigator = () => {
       </section>
       <section>
         <ul>
-          {dummyPlaylistArray.map((playlist, index) => {
-            return <PlayListNav key={playlist.id} playlist={playlist} />;
+          {dummyPlaylistArray.map((playlist) => {
+            return <PlayListNav key={playlist.id} playlist={playlist}/>;
           })}
         </ul>
 

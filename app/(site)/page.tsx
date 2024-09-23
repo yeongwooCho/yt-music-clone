@@ -10,7 +10,6 @@ const home = async function Home() {
   const dummyPlaylistArray1 = [...dummyPlaylistArray];
   const dummyPlaylistArray2 = [await getPlaylistById(1)];
   const dummyPlaylistArray3 = [await getPlaylistById(2)];
-  const dummyPlaylistArray4 = [await getPlaylistById(3)];
   await sleep(2000);
   // throw new Error("ERROR");
   return (
