@@ -3,8 +3,9 @@ import PagePadding from "@/components/PagePadding";
 import Category from "@/app/explore/components/Category";
 import PlayListCarousel from "@/components/PlayListCarousel";
 import UserIcon from "@/components/UserIcon";
-import {getAllPlaylist, getSongListTop10} from "@/lib/dummyData";
+import {dummyGenreList, getAllPlaylist, getSongListTop10} from "@/lib/dummyData";
 import SongListCarousel from "@/components/SongListCarousel";
+import GenreListCarousel from "@/components/GenreListCarousel";
 
 const page = async () => {
   // 병렬처리
@@ -33,6 +34,9 @@ const page = async () => {
             <UserIcon size="lg"/>
           </div>
         )}/>
+        <div className="mt-20"></div>
+        <GenreListCarousel title='분위기 및 장르' genreList={dummyGenreList}/>
+        <div className="mt-20"></div>
         <div className="mt-20"></div>
       </div>
     </PagePadding>
