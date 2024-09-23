@@ -26,13 +26,14 @@ const page = async () => {
             <UserIcon size="lg"/>
           </div>
         )}/>
-
+        <div className="mt-20"></div>
         <SongListCarousel
           title="인기곡" subTitle="" songListTop10={songListTop10} Thumbnail={(
           <div className="w-[56px] h-[56px]">
             <UserIcon size="lg"/>
           </div>
         )}/>
+        <div className="mt-20"></div>
       </div>
     </PagePadding>
 
